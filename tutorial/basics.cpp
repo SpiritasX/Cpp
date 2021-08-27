@@ -3,7 +3,13 @@
 #include <cmath> // Math lib...
 using namespace std; // Avoids the need for typing stuff like std::cout...
 
-int main() {
+void func(int num = 5); // If an argument not given, default value is 5.
+// Function overloading...
+int zbir(int a, int b);
+double zbir(double a, double b);
+
+int main()
+{
     // cout test
     cout << "Hello, World!\n";
 
@@ -32,5 +38,34 @@ int main() {
 
     cout << temp << endl;
 
+    string food = "Burger";
+    string &meal = food;
+
+    cout << meal << endl;
+    cout << &food << endl;
+
+    string* ptr = &food;
+
+    cout << *ptr << endl;
+    func(3);
+    func(); // Parameter takes the default value.
+    func(12);
+
+    cout << zbir(2, 5) << " " << zbir(1.3, 6.21) << endl;
     return 0;
+}
+
+void func(int num)
+{
+    cout << num << endl;
+}
+
+int zbir(int a, int b)
+{
+    return a + b;
+}
+
+double zbir(double a, double b)
+{
+    return a + b;
 }
